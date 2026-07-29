@@ -15,6 +15,10 @@ def process(command: str) -> str:
 
     for intent in INTENTS:
         if any(keyword in command for keyword in intent["keywords"]):
-            return intent["skill"].run(command)
+            try:
+                return intent["skill"].run(command)
+            except Exception as e:
+                print(f"[Brain] Skill error: {e}")
+                return "Sorry, something went wrong running that."
 
     return f"I heard: {command}, but I don't have a skill for that yet."

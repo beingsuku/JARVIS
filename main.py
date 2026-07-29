@@ -2,6 +2,7 @@ from assistant.speaker import speak
 from assistant.listener import listen
 from assistant.audio.wake_word import WakeWordDetector
 from assistant.brain.processor import process
+ 
 
 detector = WakeWordDetector()
 
@@ -12,14 +13,15 @@ while True:
     detector.wait_for_wake_word()
     speak("Yes?")
 
-    command = listen()
+    while True:
+        command = listen()
 
-    if command == "":
-        continue
+        if command == "":
+            continue
 
-    if "exit" in command:
-        speak("Goodbye.")
-        break
+        if "exit" in command:
+            speak("Going to sleep.")
+            break
 
-    response = process(command)
-    speak(response)
+        response = process(command)
+        speak(response)

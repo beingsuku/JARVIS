@@ -14,7 +14,7 @@ from assistant.audio.mic_stream import MicStream
 class WakeWordDetector:
     def __init__(
         self,
-        model_name: str = "hey_jaarvis",
+        model_name: str = "hey_jarvis",
         threshold: float = 0.5,
         sample_rate: int = 16000,
     ):
