@@ -13,9 +13,16 @@ from assistant.skills import (
     joke_skill,
     search,
     website,
+    dictionary,
+    translation,
     sys_info,
     clipboard,
     reminder,
+    calculator,
+    brightness,
+    screenshot,
+    lock_pc_skill,
+    recycle_bin
 )
 
 INTENTS = [
@@ -27,7 +34,14 @@ INTENTS = [
     {"keywords": ["joke"], "skill": joke_skill},
     {"keywords": ["search"], "skill": search},
     {"keywords": ["youtube", "github", "gmail", "website"], "skill": website},
+    {"keywords": ["define", "dictionary", "meaning of"], "skill": dictionary},
+    {"keywords": ["translate", "translation"], "skill": translation},
     {"keywords": ["system", "cpu", "ram", "battery"], "skill": sys_info},
     {"keywords": ["clipboard"], "skill": clipboard},
     {"keywords": ["remind"], "skill": reminder},
+    {"keywords": ["calculate", "math"], "skill": calculator},
+    {"keywords": ["brightness"], "skill": brightness},
+    {"keywords": ["screenshot"], "skill": screenshot},
+    {"keywords": ["lock"], "skill": lock_pc_skill},
+    {"keywords": ["clear","bin"], "skill": recycle_bin},
 ]
