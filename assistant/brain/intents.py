@@ -4,6 +4,7 @@ This is deliberately simple (keyword matching) for now — it can be
 upgraded later to a proper NLU/intent classifier without changing
 processor.py's interface.
 """
+  
 from assistant.skills import (
     time_skill,
     open_app_skill,
@@ -11,6 +12,7 @@ from assistant.skills import (
     volume_skill,
     weather_skill,
     joke_skill,
+    yt_search,
     search,
     website,
     dictionary,
@@ -21,8 +23,9 @@ from assistant.skills import (
     calculator,
     brightness,
     screenshot,
-    lock_pc_skill,
-    recycle_bin
+    recycle_bin,
+    restart_app,
+    power_skill
 )
 
 INTENTS = [
@@ -32,6 +35,7 @@ INTENTS = [
     {"keywords": ["volume", "mute"], "skill": volume_skill},
     {"keywords": ["weather"], "skill": weather_skill},
     {"keywords": ["joke"], "skill": joke_skill},
+    {"keywords": ["on youtube", "search youtube", "youtube search"], "skill": yt_search},
     {"keywords": ["search"], "skill": search},
     {"keywords": ["youtube", "github", "gmail", "website"], "skill": website},
     {"keywords": ["define", "dictionary", "meaning of"], "skill": dictionary},
@@ -42,6 +46,7 @@ INTENTS = [
     {"keywords": ["calculate", "math"], "skill": calculator},
     {"keywords": ["brightness"], "skill": brightness},
     {"keywords": ["screenshot"], "skill": screenshot},
-    {"keywords": ["lock"], "skill": lock_pc_skill},
+    {"keywords": ["lock", "sleep", "restart pc", "restart computer", "shutdown", "shut down"], "skill": power_skill},
     {"keywords": ["clear","bin"], "skill": recycle_bin},
+    {"keywords": ["restart app"], "skill": restart_app},
 ]
