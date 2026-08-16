@@ -25,7 +25,8 @@ from assistant.skills import (
     screenshot,
     recycle_bin,
     restart_app,
-    power_skill
+    power_skill,
+    spotify_control
 )
 
 INTENTS = [
@@ -49,4 +50,5 @@ INTENTS = [
     {"keywords": ["lock", "sleep", "restart pc", "restart computer", "shutdown", "shut down"], "skill": power_skill},
     {"keywords": ["clear","bin"], "skill": recycle_bin},
     {"keywords": ["restart app"], "skill": restart_app},
+    {"keywords": ["play","skip","pause","play next track"], "skill": spotify_control}
 ]
