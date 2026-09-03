@@ -21,4 +21,4 @@ def run(command: str) -> str:
     except Exception:
         return "Something went wrong taking the screenshot."
 
-    return f"Screenshot saved as {filename}."
+    return f"Screenshot saved."
